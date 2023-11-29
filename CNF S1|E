@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+
+bool isS(char[]);
+
+bool isS(char str[]) {
+    if (str[0] == '0' && isS(str + 1) && str[1] == '1') {
+        
+        return true;
+    } else if (str[0] == '\0') {
+      
+        return true;
+    }
+    return false;
+}
+
+int main() {
+    char input[100];
+
+    printf("Enter a string: ");
+    scanf("%s", input);
+    if (isS(input)) {
+        printf("Accepted\n");
+    } else {
+        printf("Rejected\n");
+    }
+
+    return 0;
+}
